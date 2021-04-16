@@ -1,8 +1,8 @@
-import './App.css';
+import classes from  './Navigation.module.css';
 
 const Navigation = () =>{
     return(
-        <nav className="nav">
+        <nav className={classes.nav}>
             <ul>
             <li><a href="">Profile</a></li>
             <li><a href="">Messages</a></li>

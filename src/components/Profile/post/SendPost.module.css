@@ -1,0 +1,17 @@
+.send{
+    grid-area: send;
+  }
+  .send textarea{
+    width: 100%;
+    border: none;
+    background-color: rgb(237, 237, 237);
+    padding: 10px;
+  }
+  .send .wrap{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .send button{
+    color: white;
+    background-color: green;
+  }
