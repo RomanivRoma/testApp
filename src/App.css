@@ -4,6 +4,9 @@
 a{
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
 .App{
   display: grid;
   grid-template-areas: 

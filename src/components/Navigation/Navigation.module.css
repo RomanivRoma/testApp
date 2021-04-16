@@ -6,6 +6,9 @@
     padding-left: 20px;
   }
   .nav ul li{
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: .2s ease-in-out;
     list-style: none;
   }
   .nav ul li:last-child{
@@ -13,5 +16,9 @@
   }
   .nav ul li a{
     color: white;
+  }
+  .nav ul li:hover, .nav ul li.active{
+    border-color: #fff;
+    /* opacity: .7; */
   }
   

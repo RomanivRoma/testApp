@@ -1,0 +1,110 @@
+.dialogues{
+    grid-area: c;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    grid-template-areas: 
+    "title title"
+     "users dialogue";
+}
+.title{
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.dialogues ul{
+    margin: 0;
+}
+.dialogues ul li::before {
+    content: "\2022";  
+    color: rgb(150, 150, 150); 
+    font-size: 32px;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.dialogues ul li{
+    margin-bottom: 10px;
+    transition: .2s ease-in-out;
+}
+.dialogues ul li a.active, .dialogues ul li:hover{
+    color: #000;
+    font-size: 27px;
+}
+.dialogues ul li a{
+    color: rgb(143, 143, 143);
+}
+.dialogue{
+    grid-area: dialogue;
+}
+.notif{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.notif .wrap p{
+    text-align: center;
+    margin: 5px;
+}
+.dialogue .message{
+    border: lightgray solid 2px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    position: relative;
+    width: 70%;
+
+}
+.dialogue .message::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: lightgray 2px solid;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 5px;
+    left: -20px;
+    
+    transform: rotate(45deg);
+}
+.dialogue .userIcon{
+    background-color: rgb(221, 170, 3);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.dialogue .userIcon::after, .dialogue .userIcon::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    top: 28px;
+    left: 17px;
+}
+.dialogue .userIcon p{
+    color: rgb(153, 153, 153);
+    
+}
+.dialogue .userIcon::before{
+    left: 48px;
+}
+.userIcon .smile{
+    position: absolute;
+    top: 17%;
+    left: 37%;
+    width: 20px;
+    height: 36px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    /* transform: rotate(-225deg); */
+}
