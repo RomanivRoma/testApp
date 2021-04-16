@@ -12,8 +12,9 @@ const App = (props) =>{
       <div className="App">
         <Header />
         <Navigation />
-        <Route path="/profile" component={Profile}/>
-        <Route path="/dialogues" component={Dialogues}/>
+        <Profile />
+        {/* <Route path="/profile" component={Profile}/>
+        <Route path="/dialogues" component={Dialogues}/> */}
       </div>
     </BrowserRouter>
   );
