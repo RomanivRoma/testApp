@@ -12,8 +12,8 @@ const App = (props) =>{
       <div className="App">
         <Header />
         <Navigation />
-        <Route path="/profile" component={Profile}/>
-        <Route path="/dialogues" component={Dialogues}/>
+        <Route path="/(profile|)/" render={() => <Profile state={ props.state.profilePage} addPost={ props.addPost }/>} />
+        <Route path="/dialogues" render={() => <Dialogues state={ props.state.dialoguesPage } />} />
       </div>
     </BrowserRouter>
   );

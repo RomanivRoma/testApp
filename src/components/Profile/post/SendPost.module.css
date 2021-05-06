@@ -13,5 +13,6 @@
   }
   .send button{
     color: white;
+    margin: 20px 0;
     background-color: green;
   }

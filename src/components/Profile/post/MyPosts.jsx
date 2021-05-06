@@ -2,14 +2,12 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
 
-let posts = ["Hey, my name is Roma and it`s my first tweet", "Test post for my new app", ]
 
-const MyPosts = () =>{
+const MyPosts = (props) =>{
+    let postsElement = props.posts.map( el => <Post post={el.body}> </Post> )
     return (
         <div className={ classes.posts}>
-            <Post post={posts[0]} />
-            <Post post={posts[1]}/>
-    
+            { postsElement }
         </div>
     );
 }

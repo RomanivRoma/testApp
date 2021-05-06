@@ -1,36 +1,34 @@
 import classes from './Dialogues.module.css';
+import Message from './DialogueItem/Message';
+import UserMessage from './DialogueItem/UserMessage';
+import SendMessage from './DialogueItem/SendMessage';
+
 
 const Dialogues = (props) =>{
+    let userComponent = props.state.messages.map(user => <UserMessage name={props.state.users[user.id-1].name} id={ user.id }/> )
+    let messageComponent = props.state.messages.map(user =>{
+        return user.message.map(el => {
+            if(user.id == window.location.pathname.split('/')[2]){
+                return(          
+                    <Message from={el.id !== 0 ? props.state.users[el.id-1].name : 'Me' } message={ el.text } />
+                );
+            }
+        })
+    })
     return (
         <div className={ classes.dialogues }>
             <h3 className={ classes.title }>DIALOGUES</h3>
             <div className={ classes.users }>
                 <ul>
-                    <li> <a href="#"> Andrew</a></li>
-                    <li> <a className={ classes.active } href="#"> Dmitriy</a></li>
-                    <li> <a href="#"> Sasha</a></li>
-                    <li> <a href="#"> Sceta</a></li>
+                   { userComponent }
                 </ul>
             </div>
 
             <div className={ classes.dialogue }>
-                <div className={ classes.notif }>
-                   <div className={ classes.wrap}> <div className={ classes.userIcon }><div className={ classes.smile }></div></div><p>Dmitriy</p></div>
-                    <div className={ classes.message }><p>Hello, Roma, how are you? Where have you been? </p></div>
-                </div>
-                <div className={ classes.notif }>
-                   <div className={ classes.wrap}> <div className={ classes.userIcon }><div className={ classes.smile }></div></div><p>Me</p></div>
-                    <div className={ classes.message }><p>Hello, Roma, how are you? Where have you been? </p></div>
-                </div>
-                <div className={ classes.notif }>
-                   <div className={ classes.wrap}> <div className={ classes.userIcon }><div className={ classes.smile }></div></div><p>Dmitriy</p></div>
-                    <div className={ classes.message }><p>Hello, Roma, how are you? Where have you been? </p></div>
-                </div>
-                <div className={ classes.notif }>
-                   <div className={ classes.wrap}> <div className={ classes.userIcon }><div className={ classes.smile }></div></div><p>Me</p></div>
-                    <div className={ classes.message }><p>Hello, Roma, how are you? Where have you been? </p></div>
-                </div>
+                { messageComponent }
+                <SendMessage />
             </div>
+            
         </div>
     );
 }
